@@ -33,7 +33,7 @@
 			<c:otherwise>
 				<li class="nav-item"><a class="nav-link" href="/post/saveForm">글쓰기</a></li>
 				<li class="nav-item"><a class="nav-link" href="/user/updateForm">회원수정</a></li>
-				<li class="nav-item"><a class="nav-link" href="/logoutForm">로그아웃</a></li>
+				<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
 			</c:otherwise>
 		</c:choose>
 		</ul>

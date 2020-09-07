@@ -23,14 +23,13 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	
 	@PostMapping("/auth/joinProc")
 	//제네릭의 타입을 모를때는 ? 사용가능
 	public @ResponseBody CommonRespDto<?> joinProc(@RequestBody User user) {
 		// key = value 데이터만 받을 수 있기때문에 @ResponseBody를 적어줘야함
 		// 응답을 데이터로 받기 위해 사용
-		int result = userService.회원가입(user);
-		return new CommonRespDto<String>(result, "회원가입 결과 : "+result);
+		userService.회원가입(user);
+		return new CommonRespDto<String>(1, "회원가입 완료");
 	}
 	
 	

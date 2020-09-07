@@ -14,17 +14,12 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	@Transactional
-	public int 회원가입(User user) {
-		try {
-			userRepository.save(user);
-			return 1;
-		} catch (Exception e) {
-			e.getMessage();
-			return -1;
-		}
+	public void 회원가입(User user) {
+		user.setRole("ROLE_USER");
+		userRepository.save(user); //save 끝나면 다시 컨트롤러로
 	}
 	
-	@Transactional
+	@Transactional(readOnly = true)
 	public User 로그인(User user) {
 		return userRepository.login(user);
 	}
